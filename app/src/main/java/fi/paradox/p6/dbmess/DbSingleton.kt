@@ -1,13 +1,13 @@
-package fi.paradox.p5.dbmess
+package fi.paradox.p6.dbmess
 
 import android.content.Context
 import androidx.room.Room
-import fi.paradox.p5.AppDatabase
+import fi.paradox.p6.AppDatabase
 
 object DbSingleton {
     @Volatile
     private var INSTANCE: AppDatabase? = null
-
+    // TODO 4
     fun getDatabase(context: Context): AppDatabase {
         return INSTANCE ?: synchronized(this) {
             val instance = Room.databaseBuilder(

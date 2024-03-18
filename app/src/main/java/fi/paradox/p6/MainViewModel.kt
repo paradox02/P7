@@ -1,12 +1,17 @@
-package fi.paradox.p5
+package fi.paradox.p6
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import fi.paradox.p5.dbmodels.UserDto
-import fi.paradox.p5.repository.UserRepository
+import fi.paradox.p6.dbmodels.UserDto
+import fi.paradox.p6.repository.UserRepository
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val repository: UserRepository) : ViewModel() {
+
+    init {
+        insertUser(UserDto(0, "stevo", 5))
+    }
 
     fun insertUser(user: UserDto) {
         viewModelScope.launch {
@@ -14,9 +19,10 @@ class MainViewModel(private val repository: UserRepository) : ViewModel() {
         }
     }
 
-    fun getAllUsers() {
+    fun loadData() {
         viewModelScope.launch {
             val users = repository.getAllUsers()
+            Log.i("USERS", users.joinToString(","))
             // Tu môžete aktualizovať UI s načítanými užívateľmi
         }
     }

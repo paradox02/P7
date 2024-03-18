@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "fi.paradox.p5"
+    namespace = "fi.paradox.p6"
     compileSdk = 34
 
     defaultConfig {

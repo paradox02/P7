@@ -1,4 +1,4 @@
-package fi.paradox.p5
+package fi.paradox.p6
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
