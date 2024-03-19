@@ -13,7 +13,7 @@ class MainViewModel(private val repository: UserRepository) : ViewModel() {
         insertUser(UserDto(0, "stevo", 5))
     }
 
-    fun insertUser(user: UserDto) {
+    private fun insertUser(user: UserDto) {
         viewModelScope.launch {
             repository.insertUser(user)
         }

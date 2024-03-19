@@ -8,5 +8,5 @@ import fi.paradox.p6.dbmodels.UserDto
 @Database(entities = [UserDto::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
 //    TODO 3
-//    abstract fun userDao(): UserDao
+    abstract fun userDao(): UserDao
 }
