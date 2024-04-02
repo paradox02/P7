@@ -1,11 +1,10 @@
-package fi.paradox.p6
+package fi.paradox.p7
 
 import android.app.Application
-import fi.paradox.p6.dbmess.DbSingleton
 
 class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        DbSingleton.getDatabase(this)
+       // DbSingleton.getDatabase(this)
     }
 }

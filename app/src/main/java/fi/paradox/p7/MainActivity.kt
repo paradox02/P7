@@ -1,4 +1,4 @@
-package fi.paradox.p6
+package fi.paradox.p7
 
 import android.os.Bundle
 import android.widget.Button
@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,12 +24,13 @@ class MainActivity : AppCompatActivity() {
         val buttonLoadData: Button = findViewById(R.id.buttonLoadData)
 
 
+        viewModel.loadData()
         // TODO 6
         lifecycleScope.launch(Dispatchers.IO) {
-            viewModel.data.map {
-                "$it asdasdas"
-            }.collectLatest {
-                textViewData.text = it
+            viewModel.data.collectLatest {
+                withContext(Dispatchers.Main){
+                    textViewData.text = it
+                }
             }
         }
 

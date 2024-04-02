@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "fi.paradox.p6"
+    namespace = "fi.paradox.p7"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "fi.paradox.p5"
+        applicationId = "fi.paradox.p7"
         minSdk = 27
         targetSdk = 34
         versionCode = 1
@@ -53,4 +53,8 @@ dependencies {
     implementation("androidx.room:room-common:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
+
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }
